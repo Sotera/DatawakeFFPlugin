@@ -1,0 +1,13 @@
+{
+  "title": "Datawake",
+  "name": "datawake",
+  "version": "0.0.1",
+  "description": "Minimal Firefox Addon to interface with Gen 2 Datawake servers",
+  "main": "index.js",
+  "author": "Reeme",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT"
+}
