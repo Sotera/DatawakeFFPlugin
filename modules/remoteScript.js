@@ -470,7 +470,8 @@ RemoteScript.prototype.showSource = function(aTabBrowser) {
   notificationBox.appendNotification(
     stringBundleBrowser.GetStringFromName('greeting.msg'),
     "install-userscript",
-    "chrome://greasemonkey/skin/icon16.png",
+    //"chrome://greasemonkey/skin/icon16.png",
+    "chrome://greasemonkey/skin/waveicon16.png",
     notificationBox.PRIORITY_WARNING_MEDIUM,
     [{
       'label': stringBundleBrowser.GetStringFromName('greeting.btn'),

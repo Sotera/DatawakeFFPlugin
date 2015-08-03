@@ -1,8 +1,10 @@
 #greasemonkey-tbb {
-  list-style-image: url("chrome://greasemonkey/skin/icon24.png");
+/*  list-style-image: url("chrome://greasemonkey/skin/icon24.png");*/
+    list-style-image: url("chrome://greasemonkey/skin/waveicon24.png");
 }
 toolbar[iconsize="small"] #greasemonkey-tbb {
-  list-style-image: url("chrome://greasemonkey/skin/icon16.png");
+/*  list-style-image: url("chrome://greasemonkey/skin/icon16.png");*/
+  list-style-image: url("chrome://greasemonkey/skin/waveicon16.png");
 }
 
 #greasemonkey-tbb[disabled="yes"] {
@@ -23,5 +25,6 @@ toolbar[iconsize="small"] #greasemonkey-tbb {
 .popup-notification-icon[popupid="greasemonkey-grants"],
 .popup-notification-icon[popupid="greasemonkey-notification"]
 {
-  list-style-image: url("chrome://greasemonkey/skin/icon32.png");
+/*  list-style-image: url("chrome://greasemonkey/skin/icon32.png");*/
+  list-style-image: url("chrome://greasemonkey/skin/waveicon32.png");
 }

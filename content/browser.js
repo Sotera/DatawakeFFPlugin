@@ -233,7 +233,8 @@ GM_BrowserUI.checkDisabledScriptNavigation = function(aEvent, aSafeWin, aHref) {
   notificationBox.appendNotification(
     msg,
     "install-userscript",
-    "chrome://greasemonkey/skin/icon16.png",
+    "chrome://greasemonkey/skin/waveicon16.png",
+    //"chrome://greasemonkey/skin/icon16.png",
     notificationBox.PRIORITY_WARNING_MEDIUM,
     buttons
   );
