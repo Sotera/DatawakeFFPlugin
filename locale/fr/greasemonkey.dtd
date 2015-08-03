@@ -1,0 +1,55 @@
+<!ENTITY menu.install "Installer un Script…">
+<!ENTITY menu.install.accesskey "I">
+<!ENTITY menu.show "Voir la source du Script">
+<!ENTITY menu.show.accesskey "V">
+<!ENTITY menu.commands "Raccourcis du Script…">
+<!ENTITY menu.commands.accesskey "R">
+<!ENTITY menu.new "Nouveau Script…">
+<!ENTITY menu.new.accesskey "N">
+<!ENTITY menu.manage "Gérer les Scripts">
+<!ENTITY menu.manage.accesskey "G">
+<!ENTITY menu.options "Options de Greasemonkey">
+<!ENTITY menu.options.accesskey "O">
+<!ENTITY menu.websites "Sites Web...">
+<!ENTITY menu.websites.accesskey "W">
+<!ENTITY menu.websites.greasespot "Blog Greasespot">
+<!ENTITY menu.websites.greasespotwiki "Wiki Greasespot">
+<!ENTITY menu.websites.manual "Manuel de Greasemonkey">
+<!ENTITY menu.websites.getuserscripts "Obtenir des scripts utilisateur">
+<!ENTITY statusbar.enabled "Activé">
+<!ENTITY statusbar.enabled.accesskey "A">
+<!ENTITY install.title "Installation de Greasemonkey">
+<!ENTITY install.runson "s'exécute sur:">
+<!ENTITY install.matches "résultats:">
+<!ENTITY install.butnoton "ne s'exécute pas sur:">
+<!ENTITY install.warning1 "Des scripts malveillants peuvent violer votre vie privée et agir en votre nom à votre insu.">
+<!ENTITY install.warning2 "Installez uniquement des scripts à partir de sources auxquelles vous faites confiance.">
+<!ENTITY install.showscriptsource "Afficher la source du Script">
+<!ENTITY install.installbutton "Installer">
+<!ENTITY install.downloadError "Télécharger l'erreur">
+<!ENTITY loading "Téléchargement...">
+<!ENTITY newscript.name "Nom">
+<!ENTITY newscript.namespace "Espace de nom">
+<!ENTITY newscript.description "Description">
+<!ENTITY newscript.includes "Inclus (un par ligne)">
+<!ENTITY newscript.excludes "Exclus (un par ligne)">
+<!ENTITY newscript.fromClipboard "Utiliser le Script à partir du presse papier">
+<!ENTITY options.editor "Éditeur">
+<!ENTITY options.experimental "Expérimental">
+<!ENTITY options.defaultEditor "Utiliser l'éditeur par défaut">
+<!ENTITY options.browseForEditor "Parcourir et choisir un Éditeur">
+<!ENTITY options.globalExcludes "Exclusions globales">
+<!ENTITY options.newScript.template "Nouveau modèle de script">
+<!ENTITY options.newScript.removeUnused "Supprimer les lignes inutilisées">
+<!ENTITY Uninstall "Désinstaller">
+<!ENTITY AnonymousStatistics "Statistiques anonymes">
+<!ENTITY EnableFirefoxSync "Activer Firefox Sync pour les Scripts">
+<!ENTITY SubmitStats "Récolte et envoie de statistiques anonymes destinées à améliorer Greasemonkey">
+<!ENTITY UpdateChecking "Vérification des mises à jour">
+<!ENTITY RequireSecureUpdates "Mises à jour sécurisées nécessaires">
+<!ENTITY greasemonkey.noscriptshere "Aucun script installé n'est exécuté sur cette page.">
+<!ENTITY greasemonkey.youhavenoscripts "Vous n'avez aucun script d'installé">
+<!ENTITY greasemonkey.getuserscripts "Obtenir des scripts utilisateur">
+<!ENTITY scriptprefs.title "Préférences pour les scripts utilisateur Greasemonkey">
+<!ENTITY scriptprefs.usersettings "Paramètres de l'utilisateur">
+<!ENTITY scriptprefs.scriptsettings "Paramètres du Script">

@@ -1,0 +1,21 @@
+component  {77bf3650-1cd6-11da-8cd6-0800200c9a66} components/greasemonkey.js
+contract   @greasemonkey.mozdev.org/greasemonkey-service;1 {77bf3650-1cd6-11da-8cd6-0800200c9a66}
+category   profile-after-change @greasemonkey.mozdev.org/greasemonkey-service;1 @greasemonkey.mozdev.org/greasemonkey-service;1
+
+content    greasemonkey content/
+skin       greasemonkey classic/1.0 skin/
+
+overlay	   chrome://browser/content/browser.xul chrome://greasemonkey/content/browser.xul
+style      chrome://global/content/customizeToolbar.xul chrome://greasemonkey/skin/browser.css
+
+content    greasemonkey-modules modules/
+overlay	   chrome://browser/content/browser.xul chrome://greasemonkey/content/addons4.xul
+overlay    about:addons chrome://greasemonkey/content/addons4-overlay.xul
+
+overlay    chrome://greasemonkey/content/install.xul chrome://greasemonkey/content/closewindow.xul
+overlay    chrome://greasemonkey/content/options.xul chrome://greasemonkey/content/closewindow.xul
+overlay    chrome://greasemonkey/content/newscript.xul chrome://greasemonkey/content/closewindow.xul
+overlay    chrome://browser/content/scratchpad.xul chrome://greasemonkey/content/scratchpad-overlay.xul appversion<23.0
+overlay    chrome://browser/content/devtools/scratchpad.xul chrome://greasemonkey/content/scratchpad-overlay.xul appversion>=23.0
+
+locale     greasemonkey en-US locale/en-US/

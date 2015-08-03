@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://greasemonkey/skin/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://greasemonkey/skin/scriptprefs.css" type="text/css"?>
+
+<!DOCTYPE prefwindow [
+<!ENTITY % addonsDTD SYSTEM "chrome://greasemonkey/locale/gm-addons.dtd">
+<!ENTITY % cludesDTD SYSTEM "chrome://greasemonkey/locale/gm-cludes.dtd">
+<!ENTITY % greasemonkeyDTD SYSTEM "chrome://greasemonkey/locale/greasemonkey.dtd">
+%addonsDTD;
+%cludesDTD;
+%greasemonkeyDTD;
+]>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  buttons="accept,cancel"
+  id="greasemonkey-script-preferences"
+  title="&scriptprefs.title;"
+  ondialogaccept="return onDialogAccept();"
+  persist="width height"
+>
+
+<script type="application/x-javascript" src="chrome://greasemonkey/content/scriptprefs.js" />
+
+<tabbox flex="1">
+  <tabs>
+    <tab label="&scriptprefs.usersettings;" />
+    <tab label="&scriptprefs.scriptsettings;" />
+  </tabs>
+  <tabpanels flex="1">
+    <tabpanel flex="1">
+      <vbox flex="1">
+        <vbox flex="1" class="include">
+          <label value="&label.grpIncluded;" />
+          <cludes flex="1" id="user-includes"/>
+        </vbox>
+        <vbox flex="1" class="match">
+          <label value="&label.grpMatched;" />
+          <cludes flex="1" id="user-matches"/>
+        </vbox>
+        <vbox flex="1" class="exclude">
+          <label value="&label.grpExcluded;" />
+          <cludes flex="1" id="user-excludes" />
+        </vbox>
+      </vbox>
+    </tabpanel>
+    <tabpanel flex="1">
+      <vbox flex="1">
+        <vbox flex="1" class="include">
+          <label value="&label.grpIncluded;" />
+          <cludes flex="1" id="script-includes" class="readonly"/>
+        </vbox>
+        <vbox flex="1" class="match">
+          <label value="&label.grpMatched;" />
+          <cludes flex="1" id="script-matches" class="readonly"/>
+        </vbox>
+        <vbox flex="1" class="exclude">
+          <label value="&label.grpExcluded;" />
+          <cludes flex="1" id="script-excludes" class="readonly"/>
+        </vbox>
+      </vbox>
+    </tabpanel>
+  </tabpanels>
+</tabbox>
+
+<spacer height="5" />
+<button label="&Edit.tooltip;" oncommand="GM_util.openInEditor(gScript);" />
+
+</dialog>

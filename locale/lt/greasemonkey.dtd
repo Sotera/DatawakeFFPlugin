@@ -1,0 +1,55 @@
+<!ENTITY menu.install "Įdiegti naudotojo scenarijų...">
+<!ENTITY menu.install.accesskey "I">
+<!ENTITY menu.show "Peržiūrėti naudotojo scenarijaus pradinį kodą">
+<!ENTITY menu.show.accesskey "S">
+<!ENTITY menu.commands "Naudotojo scenarijaus komandos...">
+<!ENTITY menu.commands.accesskey "K">
+<!ENTITY menu.new "Naujas naudotojo scenarijus...">
+<!ENTITY menu.new.accesskey "N">
+<!ENTITY menu.manage "Tvarkyti naudotojo scenarijus...">
+<!ENTITY menu.manage.accesskey "T">
+<!ENTITY menu.options "Greasemonkey pasirinktys...">
+<!ENTITY menu.options.accesskey "P">
+<!ENTITY menu.websites "Web sites...">
+<!ENTITY menu.websites.accesskey "W">
+<!ENTITY menu.websites.greasespot "Greasespot Blog">
+<!ENTITY menu.websites.greasespotwiki "Greasespot Wiki">
+<!ENTITY menu.websites.manual "Greasemonkey Manual">
+<!ENTITY menu.websites.getuserscripts "Get User Scripts">
+<!ENTITY statusbar.enabled "Įjungta">
+<!ENTITY statusbar.enabled.accesskey "I">
+<!ENTITY install.title "Greasemonkey įdiegimas">
+<!ENTITY install.runson "veikia:">
+<!ENTITY install.matches "atitinka:">
+<!ENTITY install.butnoton "neveikia:">
+<!ENTITY install.warning1 "Piktavaliai scenarijai gali pažeisti jūsų privatumą ir veikti jūsų vardu jums to nė nežinant.">
+<!ENTITY install.warning2 "Scenarijus turėtumėte diegti tik iš patikimų šaltinių.">
+<!ENTITY install.showscriptsource "Rodyti scenarijaus pradinį kodą">
+<!ENTITY install.installbutton "Įdiegti">
+<!ENTITY install.downloadError "Download Error">
+<!ENTITY loading "Parsiunčiama...">
+<!ENTITY newscript.name "Pavadinimas">
+<!ENTITY newscript.namespace "Vardų sritis">
+<!ENTITY newscript.description "Aprašymas">
+<!ENTITY newscript.includes "Kuriuose veikia (po vieną eilutėj)">
+<!ENTITY newscript.excludes "Kuriuose neveikia (po vieną eilutėj)">
+<!ENTITY newscript.fromClipboard "Use Script From Clipboard">
+<!ENTITY options.editor "Redaktorius">
+<!ENTITY options.experimental "Experimental">
+<!ENTITY options.defaultEditor "Use Default Editor">
+<!ENTITY options.browseForEditor "Browse for Editor Program">
+<!ENTITY options.globalExcludes "Nevykdomi visur">
+<!ENTITY options.newScript.template "New script template">
+<!ENTITY options.newScript.removeUnused "Remove unused lines">
+<!ENTITY Uninstall "Pašalinti">
+<!ENTITY AnonymousStatistics "Anoniminė statistika">
+<!ENTITY EnableFirefoxSync "Enable Firefox Sync for User Scripts">
+<!ENTITY SubmitStats "Rinkti ir siųsti anoniminę naudojimo statistiką.">
+<!ENTITY UpdateChecking "Atnaujinimų tikrinimas">
+<!ENTITY RequireSecureUpdates "Reikalauti saugumo atnaujinimų">
+<!ENTITY greasemonkey.noscriptshere "Nėra įdiegtų scenarijų kurie veiktų šiame puslapyje.">
+<!ENTITY greasemonkey.youhavenoscripts "Jūs neturite įdiegtų scenarijų">
+<!ENTITY greasemonkey.getuserscripts "Gauti naudotojo scenarijų">
+<!ENTITY scriptprefs.title "Greasemonkey naudotojo scenarijų nustatymai - !!">
+<!ENTITY scriptprefs.usersettings "Naudotojo nustatymai">
+<!ENTITY scriptprefs.scriptsettings "Scenarijaus nustatymai">

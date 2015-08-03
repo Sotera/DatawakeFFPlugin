@@ -1,0 +1,55 @@
+<!ENTITY menu.install "Installera användarskript…">
+<!ENTITY menu.install.accesskey "I">
+<!ENTITY menu.show "Visa användarskriptkällkod">
+<!ENTITY menu.show.accesskey "V">
+<!ENTITY menu.commands "Användarskriptkommandon…">
+<!ENTITY menu.commands.accesskey "k">
+<!ENTITY menu.new "Nytt användarskript…">
+<!ENTITY menu.new.accesskey "N">
+<!ENTITY menu.manage "Hantera användarskript…">
+<!ENTITY menu.manage.accesskey "H">
+<!ENTITY menu.options "Inställningar för Greasemonkey…">
+<!ENTITY menu.options.accesskey "G">
+<!ENTITY menu.websites "Webbplatser…">
+<!ENTITY menu.websites.accesskey "W">
+<!ENTITY menu.websites.greasespot "Greasespots blogg">
+<!ENTITY menu.websites.greasespotwiki "Greasespots wiki">
+<!ENTITY menu.websites.manual "Handbok för Greasemonkey">
+<!ENTITY menu.websites.getuserscripts "Get User Scripts">
+<!ENTITY statusbar.enabled "Aktiverat">
+<!ENTITY statusbar.enabled.accesskey "A">
+<!ENTITY install.title "Installation av Greasemonkey">
+<!ENTITY install.runson "kör på:">
+<!ENTITY install.matches "matchar:">
+<!ENTITY install.butnoton "kör inte på:">
+<!ENTITY install.warning1 "Skadliga skript kan inkräkta på ditt privatliv och agera för din räkning utan din vetskap.">
+<!ENTITY install.warning2 "Du bör endast installera skript från källor som du litar på.">
+<!ENTITY install.showscriptsource "Visa skriptkällkod">
+<!ENTITY install.installbutton "Installera">
+<!ENTITY install.downloadError "Filhämtningsfel">
+<!ENTITY loading "Hämtar…">
+<!ENTITY newscript.name "Namn">
+<!ENTITY newscript.namespace "Namnrymd">
+<!ENTITY newscript.description "Beskrivning">
+<!ENTITY newscript.includes "Inkluderingar (ett per rad)">
+<!ENTITY newscript.excludes "Undantag (ett per rad)">
+<!ENTITY newscript.fromClipboard "Använd skript från Urklipp">
+<!ENTITY options.editor "Redigeringsprogram">
+<!ENTITY options.experimental "Experimentell">
+<!ENTITY options.defaultEditor "Använd standardredigeringsprogrammet">
+<!ENTITY options.browseForEditor "Bläddra efter redigeringsprogram">
+<!ENTITY options.globalExcludes "Globala undantag">
+<!ENTITY options.newScript.template "Ny skriptmall">
+<!ENTITY options.newScript.removeUnused "Ta bort oanvända rader">
+<!ENTITY Uninstall "Avinstallera">
+<!ENTITY AnonymousStatistics "Anonym statistik">
+<!ENTITY EnableFirefoxSync "Aktivera Firefox Sync för användarskript">
+<!ENTITY SubmitStats "Samla in och skicka in anonym användningsstatistik för att förbättra Greasemonkey.">
+<!ENTITY UpdateChecking "Uppdateringskontroll">
+<!ENTITY RequireSecureUpdates "Kräv säkra uppdateringar">
+<!ENTITY greasemonkey.noscriptshere "Inga installerade skript körs på denna sida.">
+<!ENTITY greasemonkey.youhavenoscripts "Du har inga installerade användarskript">
+<!ENTITY greasemonkey.getuserscripts "Hämta användarskript">
+<!ENTITY scriptprefs.title "Inställningar för användarskript i Greasemonkey - !!">
+<!ENTITY scriptprefs.usersettings "Användarinställningar">
+<!ENTITY scriptprefs.scriptsettings "Skriptinställningar">

@@ -1,0 +1,14 @@
+<!ENTITY promptForNewPage.msg "Entrez une nouvelle URL ci-dessous. Il est possible de préciser un ensemble de pages en utilisant l'astérisque (*) comme joker.">
+<!ENTITY promptForNewPage.title "Ajouter la page">
+<!ENTITY promptForNewPage.defVal "http://example.com/*">
+<!ENTITY promptForEdit.msg "Modifiez l'URL de la page ci-dessous. Il est possible de préciser un ensemble de pages en utilisant l'astérisque (*) comme joker.">
+<!ENTITY promptForEdit.title "Éditer la page">
+<!ENTITY button.add "Ajouter…">
+<!ENTITY button.addUserExclude "Ajouter cette exclusion utilisateur">
+<!ENTITY button.addUserMatch "Add as user match">
+<!ENTITY button.addUserInclude "Ajouter cette autorisation utilisateur">
+<!ENTITY button.edit "Éditer…">
+<!ENTITY button.remove "Supprimer">
+<!ENTITY label.grpIncluded "Pages autorisées">
+<!ENTITY label.grpMatched "Matched Pages">
+<!ENTITY label.grpExcluded "Pages exclues">

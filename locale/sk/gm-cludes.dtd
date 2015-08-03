@@ -1,0 +1,14 @@
+<!ENTITY promptForNewPage.msg "Sem napíšte novú adresu. Môžete bližšie určiť viac stránok pomocou tohto znaku (*).">
+<!ENTITY promptForNewPage.title "Pridať stránku">
+<!ENTITY promptForNewPage.defVal "http://príklad.sk/*">
+<!ENTITY promptForEdit.msg "Tu upravte adresu stránky. Môžete bližšie určiť viac stránok pomocou tohto znaku (*).">
+<!ENTITY promptForEdit.title "Upraviť stránku">
+<!ENTITY button.add "Pridať...">
+<!ENTITY button.addUserExclude "Pridať ako užívateľskú výnimku">
+<!ENTITY button.addUserMatch "Add as user match">
+<!ENTITY button.addUserInclude "Pridať a zahrnúť užívateľa">
+<!ENTITY button.edit "Upraviť...">
+<!ENTITY button.remove "Odstrániť">
+<!ENTITY label.grpIncluded "Zahrnuté stránky">
+<!ENTITY label.grpMatched "Matched Pages">
+<!ENTITY label.grpExcluded "Vylúčené stránky">
