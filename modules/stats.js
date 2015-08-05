@@ -1,11 +1,11 @@
 /*
-This module implements the reporting side of the pseudo-anonymous usage
-statistic gathering first described at:
-https://github.com/greasemonkey/greasemonkey/issues/1651
+ This module implements the reporting side of the pseudo-anonymous usage
+ statistic gathering first described at:
+ https://github.com/greasemonkey/greasemonkey/issues/1651
 
-It does not export anything.  It only sets an interval and periodically does
-the work to send data to the server.
-*/
+ It does not export anything.  It only sets an interval and periodically does
+ the work to send data to the server.
+ */
 var EXPORTED_SYMBOLS = [];
 
 Components.utils.import('resource://services-common/utils.js');
@@ -33,149 +33,150 @@ GM_util.timeout(
 
 
 function check() {
-  if (!gPrefMan.getValue('stats.optedin')) {
-    promptUser();
-    return;
-  }
+    if (!gPrefMan.getValue('stats.optedin')) {
+        promptUser();
+        return;
+    }
 
-  var lastSubmit = new Date(gPrefMan.getValue('stats.lastsubmittime'));
-  var nextSubmit = new Date(
-      (lastSubmit.valueOf()) + gPrefMan.getValue('stats.interval'));
-  var now = new Date();
+    var lastSubmit = new Date(gPrefMan.getValue('stats.lastsubmittime'));
+    var nextSubmit = new Date(
+        (lastSubmit.valueOf()) + gPrefMan.getValue('stats.interval'));
+    var now = new Date();
 
-  if (nextSubmit > now) return;
+    if (nextSubmit > now) return;
 
-  if (!gPrefMan.getValue('stats.id')) {
-    var rng = Components.classes["@mozilla.org/security/random-generator;1"]
-        .createInstance(Components.interfaces.nsIRandomGenerator);
-    var bytes = rng.generateRandomBytes(18);
-    var id = CommonUtils.encodeBase64URL(CommonUtils.byteArrayToString(bytes));
-    gPrefMan.setValue('stats.id', id);
-  }
+    if (!gPrefMan.getValue('stats.id')) {
+        var rng = Components.classes["@mozilla.org/security/random-generator;1"]
+            .createInstance(Components.interfaces.nsIRandomGenerator);
+        var bytes = rng.generateRandomBytes(18);
+        var id = CommonUtils.encodeBase64URL(CommonUtils.byteArrayToString(bytes));
+        gPrefMan.setValue('stats.id', id);
+    }
 
-  try {
-    submit();
-  } catch (e) {
-    // Ignore errors, just log.
-    GM_util.logError(e);
-  }
+    try {
+        submit();
+    } catch (e) {
+        // Ignore errors, just log.
+        GM_util.logError(e);
+    }
 
-  gPrefMan.setValue('stats.lastsubmittime', now.toString());
+    gPrefMan.setValue('stats.lastsubmittime', now.toString());
 }
 
 
 function submit() {
-  var url = gPrefMan.getValue('stats.url') + gPrefMan.getValue('stats.id');
-  var stats = JSON.stringify(getStatsObj());
+    var url = gPrefMan.getValue('stats.url') + gPrefMan.getValue('stats.id');
+    var stats = JSON.stringify(getStatsObj());
 
-  var req = Components.classes['@mozilla.org/xmlextras/xmlhttprequest;1']
-      .createInstance(Components.interfaces.nsIXMLHttpRequest);
-  req.open('POST', url, true);
-  req.onload = GM_util.hitch(null, submitOnload, req);
-  req.send(stats);
+    var req = Components.classes['@mozilla.org/xmlextras/xmlhttprequest;1']
+        .createInstance(Components.interfaces.nsIXMLHttpRequest);
+    req.open('POST', url, true);
+    req.onload = GM_util.hitch(null, submitOnload, req);
+    req.send(stats);
 }
 
 
 function submitOnload(req) {
-  if (!req.responseText) return;
-  try {
-    var response = JSON.parse(req.responseText);
-    if (response.interval) {
-      gPrefMan.setValue('stats.interval', response.interval);
+    if (!req.responseText) return;
+    try {
+        var response = JSON.parse(req.responseText);
+        if (response.interval) {
+            gPrefMan.setValue('stats.interval', response.interval);
+        }
+    } catch (e) {
+        GM_util.logError('stats submitOnload: Couldn\'t handle response: ' + e);
     }
-  } catch (e) {
-    GM_util.logError('stats submitOnload: Couldn\'t handle response: ' + e);
-  }
 }
 
 function getStatsObj() {
-  var xulAppInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-      .getService(Components.interfaces.nsIXULAppInfo);
-  var xulRuntime = Components.classes["@mozilla.org/xre/app-info;1"]
-      .getService(Components.interfaces.nsIXULRuntime);
-  var stats = {
-      'firefoxVersion': xulAppInfo.name + ' ' + xulAppInfo.version
-          + ' ('  + xulAppInfo.appBuildID + ')',
-      'platform': xulRuntime.OS,
+    var xulAppInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+        .getService(Components.interfaces.nsIXULAppInfo);
+    var xulRuntime = Components.classes["@mozilla.org/xre/app-info;1"]
+        .getService(Components.interfaces.nsIXULRuntime);
+    var stats = {
+        'firefoxVersion': xulAppInfo.name + ' ' + xulAppInfo.version
+        + ' (' + xulAppInfo.appBuildID + ')',
+        'platform': xulRuntime.OS,
 
-      // TODO: Ask AddonManager for version?  Async makes that difficult.
-      'greasemonkeyVersion': gPrefMan.getValue('version'),
-      'greasemonkeyEnabled': gPrefMan.getValue('enabled'),
-      'globalExcludeCount': GM_util.getService().config.globalExcludes.length,
+        // TODO: Ask AddonManager for version?  Async makes that difficult.
+        'greasemonkeyVersion': gPrefMan.getValue('version'),
+        'greasemonkeyEnabled': gPrefMan.getValue('enabled'),
+        'globalExcludeCount': GM_util.getService().config.globalExcludes.length,
 
-      'scripts': [],
-      };
+        'scripts': [],
+    };
 
-  var scripts = GM_util.getService().config.scripts;
-  for (var i = 0, script = null; script = scripts[i]; i++) {
-    var valueStats = GM_ScriptStorageBack(script).getStats();
+    var scripts = GM_util.getService().config.scripts;
+    for (var i = 0, script = null; script = scripts[i]; i++) {
+        var valueStats = GM_ScriptStorageBack(script).getStats();
 
-    var downloadUri = GM_util.uriFromUrl(script.downloadURL);
-    var domain = null;
-    try {
-      // Ignore errors here; i.e. invalid/empty URLs.
-      domain = gTldService.getBaseDomain(downloadUri);
-    } catch (e) { }
+        var downloadUri = GM_util.uriFromUrl(script.downloadURL);
+        var domain = null;
+        try {
+            // Ignore errors here; i.e. invalid/empty URLs.
+            domain = gTldService.getBaseDomain(downloadUri);
+        } catch (e) {
+        }
 
-    var sizes = [script.textContent.length];
-    for (var j = 0, require = null; require = script.requires[j]; j++) {
-      sizes[sizes.length] = require.textContent.length;
+        var sizes = [script.textContent.length];
+        for (var j = 0, require = null; require = script.requires[j]; j++) {
+            sizes[sizes.length] = require.textContent.length;
+        }
+
+        var scriptStat = {
+            'enabled': script.enabled,
+            'id': script.id,
+            'installScheme': downloadUri.scheme,
+            'installDomain': domain,
+            'installTime': script.installDate.toISOString(),
+            'modifiedTime': script.modifiedDate.toISOString(),
+            'sizes': sizes,
+            'userExcludeCount': script.userExcludes.length,
+            'userMatchCount': script.userMatches.length,
+            'userIncludeCount': script.userIncludes.length,
+            'valueCount': valueStats.count,
+            'valueSize': valueStats.size,
+        };
+        stats.scripts[stats.scripts.length] = scriptStat;
     }
 
-    var scriptStat = {
-        'enabled': script.enabled,
-        'id': script.id,
-        'installScheme': downloadUri.scheme,
-        'installDomain': domain,
-        'installTime': script.installDate.toISOString(),
-        'modifiedTime': script.modifiedDate.toISOString(),
-        'sizes': sizes,
-        'userExcludeCount': script.userExcludes.length,
-        'userMatchCount': script.userMatches.length,
-        'userIncludeCount': script.userIncludes.length,
-        'valueCount': valueStats.count,
-        'valueSize': valueStats.size,
-        };
-    stats.scripts[stats.scripts.length] = scriptStat;
-  }
+    // TODO: Specify "ui" metrics, i.e. clicks on various things.
 
-  // TODO: Specify "ui" metrics, i.e. clicks on various things.
-
-  return stats;
+    return stats;
 }
 
 
 function promptUser() {
-  if (gPrefMan.getValue('stats.prompted')) return;
-  gPrefMan.setValue('stats.prompted', true);
+    if (gPrefMan.getValue('stats.prompted')) return;
+    gPrefMan.setValue('stats.prompted', true);
 
-  var win = GM_util.getBrowserWindow();
-  var browser = win.gBrowser;
+    var win = GM_util.getBrowserWindow();
+    var browser = win.gBrowser;
 
-  var notificationBox = browser.getNotificationBox();
-  notificationBox.appendNotification(
-    gStringBundle.GetStringFromName('stats-prompt.msg'),
-    "greasemonkey-stats-opt-in",
-    "chrome://greasemonkey/skin/waveicon16.png",
-    //"chrome://greasemonkey/skin/icon16.png",
-    notificationBox.PRIORITY_INFO_MEDIUM,
-    [{
-      'label': gStringBundle.GetStringFromName('stats-prompt.readmore'),
-      'accessKey': gStringBundle.GetStringFromName('stats-prompt.readmore.accesskey'),
-      'popup': null,
-      'callback': function() {
-        browser.loadOneTab(
-            'http://www.greasespot.net/2012/11/anonymous-statistic-gathering.html',
-            {'inBackground': false});
-      }
-    },{
-      'label': gStringBundle.GetStringFromName('stats-prompt.optin'),
-      'accessKey': gStringBundle.GetStringFromName('stats-prompt.optin.accesskey'),
-      'popup': null,
-      'callback': function() {
-        gPrefMan.setValue('stats.optedin', true);
-        check();
-      }
-    }]
-  );
+    var notificationBox = browser.getNotificationBox();
+    notificationBox.appendNotification(
+        gStringBundle.GetStringFromName('stats-prompt.msg'),
+        "greasemonkey-stats-opt-in",
+        "chrome://greasemonkey/skin/waveicon16.png",
+        //"chrome://greasemonkey/skin/icon16.png",
+        notificationBox.PRIORITY_INFO_MEDIUM,
+        [{
+            'label': gStringBundle.GetStringFromName('stats-prompt.readmore'),
+            'accessKey': gStringBundle.GetStringFromName('stats-prompt.readmore.accesskey'),
+            'popup': null,
+            'callback': function () {
+                browser.loadOneTab(
+                    'http://www.greasespot.net/2012/11/anonymous-statistic-gathering.html',
+                    {'inBackground': false});
+            }
+        }, {
+            'label': gStringBundle.GetStringFromName('stats-prompt.optin'),
+            'accessKey': gStringBundle.GetStringFromName('stats-prompt.optin.accesskey'),
+            'popup': null,
+            'callback': function () {
+                gPrefMan.setValue('stats.optedin', true);
+                check();
+            }
+        }]
+    );
 }
