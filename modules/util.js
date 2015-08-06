@@ -63,3 +63,5 @@ XPCOMUtils.defineLazyModuleGetter(GM_util, 'windowIdForEvent', 'chrome://greasem
 XPCOMUtils.defineLazyModuleGetter(GM_util, 'windowId', 'chrome://greasemonkey-modules/content/util/windowId.js');
 XPCOMUtils.defineLazyModuleGetter(GM_util, 'windowIsClosed', 'chrome://greasemonkey-modules/content/util/windowIsClosed.js');
 XPCOMUtils.defineLazyModuleGetter(GM_util, 'writeToFile', 'chrome://greasemonkey-modules/content/util/writeToFile.js');
+///-->JReeme's stuff below vvv
+XPCOMUtils.defineLazyModuleGetter(GM_util, 'toggleDatawakeToolbar', 'chrome://greasemonkey-modules/content/datawake.js');

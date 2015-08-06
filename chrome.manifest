@@ -10,6 +10,7 @@ style      chrome://global/content/customizeToolbar.xul chrome://greasemonkey/sk
 
 content    greasemonkey-modules modules/
 overlay	   chrome://browser/content/browser.xul chrome://greasemonkey/content/addons4.xul
+#overlay    chrome://browser/content/browser.xul chrome://greasemonkey/content/datawake-toolbar.xul
 overlay    about:addons chrome://greasemonkey/content/addons4-overlay.xul
 
 overlay    chrome://greasemonkey/content/install.xul chrome://greasemonkey/content/closewindow.xul

@@ -138,9 +138,11 @@ GM_BrowserUI.refreshStatus = function() {
   var checkedEl = document.getElementById("gm_toggle_checked");
 
   if (GM_util.getEnabled()) {
+    GM_util.toggleDatawakeToolbar(true);
     checkedEl.setAttribute('checked', true);
     enabledEl.removeAttribute('disabled');
   } else {
+    GM_util.toggleDatawakeToolbar(false);
     checkedEl.setAttribute('checked', false);
     enabledEl.setAttribute('disabled', 'yes');
   }

@@ -1,0 +1,49 @@
+.TutTB-HasIcon {
+	list-style-image: url("chrome://greasemonkey/skin/image_sheet.png");
+}
+
+/*#TutTB-MainMenu {
+    -moz-image-region: rect(0px 16px 16px 0px);
+}*/
+
+#TutTB-MainMenu {
+	-moz-image-region: rect(0px 80px 16px 64px);
+}
+
+#TutTB-Combined-Button {
+	-moz-image-region: rect(0px 32px 16px 16px);
+}
+
+/*#datawake-login-button {
+    font-weight: bold;
+    color: #327DC7;
+}*/
+
+.datawake-toolbar-labels {
+    font-weight: bold;
+    color: #327DC7;
+}
+
+#TutTB-Combined-Button > .toolbarbutton-menubutton-button {
+    -moz-box-orient: vertical;
+}
+
+#TutTB-Web-Button,
+#TutTB-Combined-Web {
+    -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+#TutTB-Combined-Image {
+    -moz-image-region: rect(0px 64px 16px 48px);
+}
+
+#TutTB-ResizeBar {
+    background-image: url("chrome://greasemonkey/skin/gripper.png");
+    min-height: 22px;
+    min-width: 3px;
+}
+
+#TutTB-ResizeSplitter {
+    background: transparent;
+    border: none !important;
+}
