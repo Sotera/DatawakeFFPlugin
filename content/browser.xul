@@ -29,7 +29,7 @@
         <spacer width="4"/>
         <vbox width="16"
               height="16">
-          <image src="chrome://greasemonkey/skin/waveicon16.png"
+          <image src="chrome://greasemonkey/skin/icon16.png"
                  tooltiptext="Sleepy data? Wake it up with Datawake!"/>
         </vbox>
         <label value="Datawake"

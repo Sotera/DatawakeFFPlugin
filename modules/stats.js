@@ -157,8 +157,7 @@ function promptUser() {
     notificationBox.appendNotification(
         gStringBundle.GetStringFromName('stats-prompt.msg'),
         "greasemonkey-stats-opt-in",
-        "chrome://greasemonkey/skin/waveicon16.png",
-        //"chrome://greasemonkey/skin/icon16.png",
+        "chrome://greasemonkey/skin/icon16.png",
         notificationBox.PRIORITY_INFO_MEDIUM,
         [{
             'label': gStringBundle.GetStringFromName('stats-prompt.readmore'),
